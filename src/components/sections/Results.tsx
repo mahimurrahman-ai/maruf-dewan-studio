@@ -74,14 +74,14 @@ export const Results = () => {
           className="relative mx-auto w-full max-w-md"
         >
           <span className="pushpin -top-3 right-10 z-10" />
-          <div className="relative bg-card rounded-3xl p-7 ring-1 ring-border shadow-note">
+          <div className="relative bg-card rounded-3xl p-6 sm:p-8 ring-1 ring-border shadow-note">
             <ul className="space-y-5">
               {checklist.map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
-                  <span className="grid place-items-center h-7 w-7 rounded-full bg-primary text-primary-foreground shrink-0">
-                    <Check className="h-4 w-4" strokeWidth={3} />
+                  <span className="grid place-items-center h-7 w-7 rounded-full bg-[hsl(28_95%_55%)] text-white shrink-0 shadow-sm">
+                    <Check className="h-4 w-4" strokeWidth={3.5} />
                   </span>
-                  <span className="font-display font-semibold text-lg md:text-xl text-foreground">
+                  <span className="font-display font-semibold text-base sm:text-lg md:text-xl text-foreground leading-tight">
                     {item}
                   </span>
                 </li>

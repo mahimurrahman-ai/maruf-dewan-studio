@@ -111,15 +111,17 @@
 
   .pushpin {
     position: absolute;
-    width: 28px; height: 28px;
+    width: 32px; height: 32px;
     background: radial-gradient(circle at 35% 30%, hsl(0 0% 100% / 0.7), hsl(var(--pin)) 35%, hsl(358 70% 38%) 100%);
     border-radius: 9999px;
-    box-shadow: 0 6px 14px -4px hsl(358 75% 30% / 0.55), inset 0 -3px 6px hsl(0 0% 0% / 0.25);
+    box-shadow: 0 8px 16px -4px hsl(358 75% 30% / 0.55), inset 0 -3px 6px hsl(0 0% 0% / 0.25);
+    transform: rotate(-8deg);
   }
   .pushpin::after {
-    content: ""; position: absolute; left: 50%; top: 100%;
-    width: 2px; height: 14px; background: hsl(230 12% 35%);
-    transform: translateX(-50%) rotate(8deg);
+    content: ""; position: absolute; left: 50%; top: 90%;
+    width: 3px; height: 18px;
+    background: linear-gradient(180deg, hsl(230 12% 45%), hsl(230 12% 25%));
+    transform: translateX(-50%) rotate(20deg);
     border-radius: 2px;
   }
 

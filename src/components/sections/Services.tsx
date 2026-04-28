@@ -32,15 +32,15 @@ const services = [
 export const Services = () => {
   return (
     <section id="services" className="py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-5 lg:px-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <p className="font-mono-ui text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
             Services
           </p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
             “Accurate Tracking, Better Decisions”
           </h2>
-          <p className="text-muted-foreground mt-5 text-lg">
+          <p className="text-muted-foreground mt-5 text-base sm:text-lg">
             Get accurate tracking for Google Analytics, Google Ads, Meta Pixel & server-side setups.
           </p>
         </div>

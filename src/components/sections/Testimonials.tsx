@@ -35,15 +35,15 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <section id="testimonials" className="py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-5 lg:px-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <p className="font-mono-ui text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
             Trusted by 500+ satisfied clients
           </p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
             Growth, in their words.
           </h2>
-          <p className="text-muted-foreground mt-4 text-lg">
+          <p className="text-muted-foreground mt-4 text-base sm:text-lg">
             Discover how we’ve driven growth and innovation.
           </p>
         </div>
@@ -53,10 +53,10 @@ export const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-card rounded-3xl p-8 lg:p-14 mb-6 ring-1 ring-border shadow-card relative"
+          className="bg-card rounded-3xl p-6 sm:p-8 lg:p-14 mb-6 ring-1 ring-border shadow-card relative"
         >
-          <Quote className="absolute top-8 right-8 h-10 w-10 text-primary/25" />
-          <blockquote className="font-display font-bold text-2xl md:text-4xl leading-[1.15] tracking-[-0.02em] max-w-4xl">
+          <Quote className="absolute top-6 right-6 sm:top-8 sm:right-8 h-8 w-8 sm:h-10 sm:w-10 text-primary/25" />
+          <blockquote className="font-display font-bold text-xl sm:text-2xl md:text-4xl leading-[1.15] tracking-[-0.02em] max-w-4xl">
             "Maruf set up accurate tracking that helped us scale ads fast and
             boost conversions by over <span className="text-primary">25%</span>.
             He gave us clear insight into which ads actually drive revenue."

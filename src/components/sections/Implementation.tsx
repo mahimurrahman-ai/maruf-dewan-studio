@@ -22,15 +22,15 @@ const bars = [
 export const Implementation = () => {
   return (
     <section className="py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         <div>
           <p className="font-mono-ui text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
             Implementation
           </p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
             Everything wired up, end to end.
           </h2>
-          <ul className="mt-10 space-y-3">
+          <ul className="mt-8 sm:mt-10 space-y-3">
             {items.map((it, i) => (
               <motion.li
                 key={i}
@@ -40,10 +40,10 @@ export const Implementation = () => {
                 transition={{ duration: 0.4, delay: i * 0.04 }}
                 className="flex items-center gap-3 bg-card rounded-2xl px-4 py-3 ring-1 ring-border shadow-card"
               >
-                <span className="h-7 w-7 rounded-full bg-primary text-primary-foreground grid place-items-center shrink-0">
-                  <Check className="h-4 w-4" strokeWidth={3} />
+                <span className="h-7 w-7 rounded-full bg-[hsl(28_95%_55%)] text-white grid place-items-center shrink-0 shadow-sm">
+                  <Check className="h-4 w-4" strokeWidth={3.5} />
                 </span>
-                <span className="text-foreground/90 font-medium">{it}</span>
+                <span className="text-foreground/90 font-medium text-sm sm:text-base">{it}</span>
               </motion.li>
             ))}
           </ul>
@@ -51,7 +51,7 @@ export const Implementation = () => {
 
         {/* Ad-platform impact viz — sticky note style */}
         <div className="lg:sticky lg:top-28">
-          <div className="relative bg-card rounded-3xl p-8 lg:p-10 ring-1 ring-border shadow-note">
+          <div className="relative bg-card rounded-3xl p-6 sm:p-8 lg:p-10 ring-1 ring-border shadow-note">
             <span className="pushpin -top-3 left-10 z-10" />
             <div className="flex items-center justify-between">
               <p className="font-mono-ui text-[11px] uppercase tracking-[0.2em] text-muted-foreground">

@@ -35,16 +35,16 @@ const Counter = ({ to, decimals = 0 }: { to: number; decimals?: number }) => {
 export const Results = () => {
   return (
     <section id="results" className="py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
           <p className="font-mono-ui text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
             Results
           </p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
             Full-Funnel Tracking to Scale Profitably
           </h2>
 
-          <div className="mt-10 grid grid-cols-2 gap-5">
+          <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:gap-5">
             {stats.map((s, i) => (
               <motion.div
                 key={i}
@@ -52,14 +52,14 @@ export const Results = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="bg-card rounded-2xl p-6 ring-1 ring-border shadow-card"
+                className="bg-card rounded-2xl p-4 sm:p-6 ring-1 ring-border shadow-card"
               >
-                <p className="font-display font-bold text-4xl md:text-5xl tracking-[-0.03em]">
+                <p className="font-display font-bold text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em]">
                   {s.prefix}
                   <Counter to={s.value} decimals={s.decimals ?? 0} />
                   <span className="text-primary">{s.suffix}</span>
                 </p>
-                <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
+                <p className="mt-2 text-xs sm:text-sm text-muted-foreground">{s.label}</p>
               </motion.div>
             ))}
           </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Activity, Server, Target, BarChart3, Layers, Code2, FileText } from "lucide-react";
+import { Activity, Server, Target, BarChart3, Layers, Code2, FileText, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
@@ -31,68 +31,63 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-secondary/40">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="max-w-3xl mb-16">
+    <section id="services" className="py-20 lg:py-28">
+      <div className="max-w-7xl mx-auto px-5 lg:px-10">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <p className="font-mono-ui text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-            Services — 01
+            Services
           </p>
-          <h2 className="font-serif-display text-4xl md:text-5xl mt-3 tracking-[-0.02em]">
-            Accurate tracking for better ad decisions.
+          <h2 className="font-display font-bold text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
+            “Accurate Tracking, Better Decisions”
           </h2>
           <p className="text-muted-foreground mt-5 text-lg">
-            From GA4 and Google Ads to Meta Pixel and server-side tracking — I
-            build reliable systems that help you measure accurately and scale
-            with confidence.
+            Get accurate tracking for Google Analytics, Google Ads, Meta Pixel & server-side setups.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
               <motion.article
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="group bg-background p-8 lg:p-10 hover:bg-card transition-colors relative"
+                className="group relative bg-card rounded-3xl p-7 ring-1 ring-border shadow-card hover:shadow-pop hover:-translate-y-1 transition-all"
               >
                 <div className="flex items-start justify-between">
-                  <div className="h-11 w-11 rounded-xl bg-foreground/[0.04] grid place-items-center group-hover:bg-accent/10 transition-colors">
-                    <Icon className="h-5 w-5 text-foreground/80 group-hover:text-accent transition-colors" />
+                  <div className="h-12 w-12 rounded-2xl bg-primary/10 grid place-items-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <Icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
-                  <span className="font-mono-ui text-[11px] text-muted-foreground">
-                    0{i + 1}
-                  </span>
+                  <span className="font-mono-ui text-[11px] text-muted-foreground">0{i + 1}</span>
                 </div>
-                <h3 className="font-serif-display text-2xl mt-8 leading-tight tracking-[-0.01em]">
+                <h3 className="font-display font-bold text-2xl mt-7 leading-snug tracking-[-0.02em]">
                   {s.title}
                 </h3>
-                <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
-                  {s.body}
-                </p>
+                <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{s.body}</p>
+                <ArrowUpRight className="absolute top-7 right-7 h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.article>
             );
           })}
 
-          {/* Chips card */}
-          <div className="bg-background p-8 lg:p-10 flex flex-col justify-between">
+          {/* Plus chips card */}
+          <div className="bg-card rounded-3xl p-7 ring-1 ring-border shadow-card flex flex-col justify-between">
             <p className="font-mono-ui text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
               Plus
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
-              <span className="inline-flex items-center gap-2 h-9 px-4 rounded-full border border-border text-sm">
+              <span className="inline-flex items-center gap-2 h-9 px-4 rounded-full bg-secondary text-sm">
                 <Code2 className="h-3.5 w-3.5" /> Custom Event Tracking
               </span>
-              <span className="inline-flex items-center gap-2 h-9 px-4 rounded-full border border-border text-sm">
+              <span className="inline-flex items-center gap-2 h-9 px-4 rounded-full bg-secondary text-sm">
                 <FileText className="h-3.5 w-3.5" /> Form & Lead Tracking
               </span>
-              <span className="inline-flex items-center gap-2 h-9 px-4 rounded-full border border-border text-sm">
+              <span className="inline-flex items-center gap-2 h-9 px-4 rounded-full bg-secondary text-sm">
                 Offline Conversions
               </span>
-              <span className="inline-flex items-center gap-2 h-9 px-4 rounded-full border border-border text-sm">
+              <span className="inline-flex items-center gap-2 h-9 px-4 rounded-full bg-secondary text-sm">
                 GDPR Cookie Consent
               </span>
             </div>

@@ -10,6 +10,7 @@ import { Booking } from "@/components/sections/Booking";
 import { Footer } from "@/components/sections/Footer";
 import { BookingModal } from "@/components/BookingModal";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { AnnouncementBar } from "@/components/sections/AnnouncementBar";
 
 const Index = () => {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -17,6 +18,7 @@ const Index = () => {
 
   return (
     <main className="bg-background text-foreground min-h-screen">
+      <AnnouncementBar />
       <Nav onBook={openBooking} />
       <Hero onBook={openBooking} />
       <Marquee />

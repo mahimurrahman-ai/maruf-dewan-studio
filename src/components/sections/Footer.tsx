@@ -7,7 +7,7 @@ export const Footer = ({ onBook }: { onBook: () => void }) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-10">
         <div>
           <div className="flex items-baseline gap-2">
-            <span className="font-serif-display text-2xl">Maruf Dewan</span>
+            <span className="font-display font-bold text-2xl">Maruf Dewan</span>
             <span className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               — Tracking & Analytics
             </span>
@@ -28,7 +28,7 @@ export const Footer = ({ onBook }: { onBook: () => void }) => {
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
                 WhatsApp ({contact.whatsappNumber})
@@ -37,7 +37,7 @@ export const Footer = ({ onBook }: { onBook: () => void }) => {
             <li>
               <a
                 href={`mailto:${contact.email}`}
-                className="inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
               >
                 <Mail className="h-4 w-4" />
                 {contact.email}
@@ -48,7 +48,7 @@ export const Footer = ({ onBook }: { onBook: () => void }) => {
                 href={contact.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
               >
                 <Linkedin className="h-4 w-4" />
                 LinkedIn
@@ -57,7 +57,7 @@ export const Footer = ({ onBook }: { onBook: () => void }) => {
             <li>
               <button
                 onClick={onBook}
-                className="inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
               >
                 <Calendar className="h-4 w-4" />
                 Book a free call
@@ -71,10 +71,10 @@ export const Footer = ({ onBook }: { onBook: () => void }) => {
             Navigate
           </p>
           <ul className="space-y-3 text-foreground">
-            <li><a href="#services" className="hover:text-accent transition-colors">Services</a></li>
-            <li><a href="#results" className="hover:text-accent transition-colors">Results</a></li>
-            <li><a href="#testimonials" className="hover:text-accent transition-colors">Testimonials</a></li>
-            <li><a href="#book" className="hover:text-accent transition-colors">Book a call</a></li>
+            <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
+            <li><a href="#results" className="hover:text-primary transition-colors">Results</a></li>
+            <li><a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a></li>
+            <li><a href="#book" className="hover:text-primary transition-colors">Book a call</a></li>
           </ul>
         </div>
       </div>

@@ -48,6 +48,8 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         sage: "hsl(var(--sage))",
+        highlight: "hsl(var(--highlight))",
+        pin: "hsl(var(--pin))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

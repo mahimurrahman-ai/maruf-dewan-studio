@@ -1,60 +1,59 @@
-import { useState } from "react";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
-import { Results } from "@/components/sections/Results";
+import { Stats } from "@/components/sections/Stats";
 import { Services } from "@/components/sections/Services";
-import { Implementation } from "@/components/sections/Implementation";
+import { AdPerformance } from "@/components/sections/AdPerformance";
+import { CallCTA } from "@/components/sections/CallCTA";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Booking } from "@/components/sections/Booking";
+import { Process } from "@/components/sections/Process";
+import { FAQ } from "@/components/sections/FAQ";
+import { Lead } from "@/components/sections/Lead";
+import { Socials } from "@/components/sections/Socials";
 import { Footer } from "@/components/sections/Footer";
-import { BookingModal } from "@/components/BookingModal";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
-import { AnnouncementBar } from "@/components/sections/AnnouncementBar";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
-const Index = () => {
-  const [bookingOpen, setBookingOpen] = useState(false);
-  const openBooking = () => setBookingOpen(true);
+const Index = () => (
+  <main className="bg-background text-foreground min-h-screen">
+    <Nav />
+    <Hero />
+    <Marquee />
+    <Stats />
+    <Services />
+    <AdPerformance />
+    <CallCTA />
+    <Testimonials />
+    <Process />
+    <FAQ />
+    <Lead />
+    <Socials />
+    <Footer />
+    <FloatingWhatsApp />
+    <ScrollToTop />
 
-  return (
-    <main className="bg-background text-foreground min-h-screen">
-      <AnnouncementBar />
-      <Nav onBook={openBooking} />
-      <Hero onBook={openBooking} />
-      <Marquee />
-      <Results />
-      <Services />
-      <Implementation />
-      <Testimonials />
-      <Booking onBook={openBooking} />
-      <Footer onBook={openBooking} />
-      <FloatingWhatsApp />
-      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
-
-      {/* JSON-LD structured data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Maruf Dewan",
-            jobTitle: "Conversion Tracking & Analytics Expert",
-            url: "/",
-            sameAs: ["https://www.linkedin.com/in/maruf-dewan/"],
-            knowsAbout: [
-              "Google Analytics 4",
-              "Google Tag Manager",
-              "Meta Pixel",
-              "Google Ads Conversion Tracking",
-              "Server-Side Tracking",
-              "GDPR Cookie Consent",
-            ],
-          }),
-        }}
-      />
-    </main>
-  );
-};
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Maruf Ahmed Dewan",
+          jobTitle: "Conversion Tracking & Analytics Expert",
+          url: "/",
+          sameAs: ["https://www.linkedin.com/in/marufahmeddewan/"],
+          knowsAbout: [
+            "Google Analytics 4",
+            "Google Tag Manager",
+            "Meta Pixel",
+            "Google Ads Conversion Tracking",
+            "Server-Side Tracking",
+            "GDPR Cookie Consent",
+          ],
+        }),
+      }}
+    />
+  </main>
+);
 
 export default Index;

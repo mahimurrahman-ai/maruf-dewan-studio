@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { Menu, X, MessageCircle, ArrowRight } from "lucide-react";
-import { whatsappLink } from "@/config/contact";
+import { Link } from "react-router-dom";
+import { whatsappLink, contact } from "@/config/contact";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#results", label: "Results" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#book", label: "Book" },
+  { href: "/#testimonials", label: "Reviews" },
+  { href: "/#services", label: "Services" },
+  { href: "/#process", label: "Process" },
+  { href: "/price", label: "Pricing" },
+  { href: "/#footer", label: "Contact" },
 ];
 
 export const Nav = ({ onBook }: { onBook: () => void }) => {
@@ -28,12 +30,12 @@ export const Nav = ({ onBook }: { onBook: () => void }) => {
         }`}
       >
         <nav className="max-w-7xl mx-auto px-5 lg:px-10 h-16 flex items-center justify-between">
-          <a href="#top" className="flex items-baseline gap-2 group">
+          <Link to="/" className="flex items-baseline gap-2 group">
             <span className="font-display font-bold text-lg text-foreground">Maruf Dewan</span>
             <span className="hidden sm:inline font-mono-ui text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-              — Tracking & Analytics
+              — Tracking &amp; Analytics
             </span>
-          </a>
+          </Link>
 
           <ul className="hidden md:flex items-center gap-1 bg-card/80 backdrop-blur ring-1 ring-border rounded-full px-2 py-1.5 shadow-card">
             {links.map((l) => (
@@ -58,15 +60,17 @@ export const Nav = ({ onBook }: { onBook: () => void }) => {
             >
               <MessageCircle className="h-4 w-4" />
             </a>
-            <button
-              onClick={onBook}
+            <a
+              href={contact.calendarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:inline-flex items-center gap-2 h-10 pl-5 pr-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-95 transition-opacity shadow-pop"
             >
-              Book a call
+              Book A Call
               <span className="grid place-items-center h-7 w-7 rounded-full bg-background/95 text-foreground">
                 <ArrowRight className="h-3.5 w-3.5" />
               </span>
-            </button>
+            </a>
             <button
               className="md:hidden h-10 w-10 grid place-items-center rounded-full bg-card ring-1 ring-border"
               onClick={() => setOpen(true)}
@@ -112,15 +116,15 @@ export const Nav = ({ onBook }: { onBook: () => void }) => {
             >
               <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
             </a>
-            <button
-              onClick={() => {
-                setOpen(false);
-                onBook();
-              }}
-              className="h-12 rounded-full bg-primary text-primary-foreground font-semibold"
+            <a
+              href={contact.calendarUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="h-12 grid place-items-center rounded-full bg-primary text-primary-foreground font-semibold"
             >
-              Book a free call
-            </button>
+              Book A Call
+            </a>
           </div>
         </div>
       )}

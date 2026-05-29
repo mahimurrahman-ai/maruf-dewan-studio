@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Check, MessageCircle, Star, Play } from "lucide-react";
-import { whatsappLink } from "@/config/contact";
+import { whatsappLink, contact } from "@/config/contact";
 
-const ticks = ["Tracking in 3 Hours", "I Manage Everything", "24/7 Expert Support"];
+const ticks = [
+  "Fast & Reliable Tracking Setup",
+  "End-to-End Implementation",
+  "Accurate Conversion Tracking",
+  "24/7 Expert Support",
+];
 const avatars = ["#FFB7A8", "#A6C4FF", "#FFD27A", "#C9B6FF", "#9CE0C2"];
 
 export const Hero = ({ onBook }: { onBook: () => void }) => {
@@ -13,21 +18,26 @@ export const Hero = ({ onBook }: { onBook: () => void }) => {
       <div className="pointer-events-none absolute top-40 -right-24 h-96 w-96 rounded-full bg-highlight/40 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+        <p className="font-mono-ui text-[11px] uppercase tracking-[0.24em] text-primary mb-5">
+          Conversion Tracking &amp; Analytics Expert
+        </p>
         <motion.h1
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="font-display font-bold text-foreground text-[clamp(1.875rem,6.2vw,4.5rem)] leading-[1.06] tracking-[-0.035em]"
         >
-          Wasting ad spend due to inaccurate tracking?{" "}
-          <span className="block mt-2 sm:mt-3">
-            I fix it so your ads get the right data to{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">scale</span>
-              <span className="absolute inset-x-0 bottom-1 h-3 bg-highlight/80 -z-0 rounded-sm" />
-            </span>
+          Is Your Ad Spend Being Wasted by{" "}
+          <span className="relative inline-block">
+            <span className="relative z-10 text-primary">Broken Tracking?</span>
           </span>
         </motion.h1>
+
+        <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
+          I fix &amp; set up GA4, GTM, Meta Pixel, and Google Ads tracking with GDPR-compliant,
+          cookie consent, server-side, and custom event tracking for any CMS or custom-coded
+          websites so you capture every conversion and optimize ads with confidence.
+        </p>
 
         <motion.div
           initial={{ opacity: 0, y: 8 }}
@@ -37,7 +47,7 @@ export const Hero = ({ onBook }: { onBook: () => void }) => {
         >
           {ticks.map((t) => (
             <span key={t} className="inline-flex items-center gap-2 text-[13px] sm:text-base text-foreground/85 font-medium">
-              <span className="grid place-items-center h-5 w-5 rounded-full bg-[hsl(212_95%_55%)] text-white shadow-sm">
+              <span className="grid place-items-center h-5 w-5 rounded-full bg-primary text-primary-foreground shadow-sm">
                 <Check className="h-3 w-3" strokeWidth={4} />
               </span>
               {t}
@@ -57,14 +67,14 @@ export const Hero = ({ onBook }: { onBook: () => void }) => {
               <div key={i} className="h-7 w-7 rounded-full ring-2 ring-card" style={{ backgroundColor: c }} />
             ))}
           </div>
-          <div className="flex flex-col items-start leading-tight">
-            <div className="flex items-center gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-3 w-3 fill-highlight text-highlight" />
-              ))}
+            <div className="flex flex-col items-start leading-tight">
+              <div className="flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3 w-3 fill-primary text-primary" />
+                ))}
+              </div>
+              <span className="text-[12px] font-semibold text-foreground underline underline-offset-2 decoration-foreground/30">500+ Tracking</span>
             </div>
-            <span className="text-[12px] font-semibold text-foreground underline underline-offset-2 decoration-foreground/30">500+ Tracking</span>
-          </div>
         </motion.div>
 
         {/* Video / poster card */}
@@ -100,15 +110,17 @@ export const Hero = ({ onBook }: { onBook: () => void }) => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-3 px-2"
         >
-          <button
-            onClick={onBook}
+          <a
+            href={contact.auditFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 h-14 pl-6 sm:pl-7 pr-2 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-95 transition-opacity shadow-pop text-sm sm:text-base"
           >
-            Claim Your Tracking Audit!
+            Claim Your Free Tracking Audit
             <span className="grid place-items-center h-10 w-10 rounded-full bg-background text-foreground transition-transform group-hover:translate-x-0.5">
               <ArrowRight className="h-4 w-4" />
             </span>
-          </button>
+          </a>
           <a
             href={whatsappLink()}
             target="_blank"

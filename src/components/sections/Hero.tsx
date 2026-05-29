@@ -1,203 +1,124 @@
 import { motion } from "framer-motion";
-import { Check, MessageCircle, ArrowRight, Play, BadgeCheck } from "lucide-react";
+import { ArrowRight, Check, MessageCircle, Star, Play } from "lucide-react";
 import { whatsappLink } from "@/config/contact";
 
-const ticks = [
-  "Fast & Reliable Tracking Setup",
-  "End-to-End Implementation",
-  "Accurate Conversion Tracking",
-  "24/7 Expert Support",
-];
+const ticks = ["Tracking in 3 Hours", "I Manage Everything", "24/7 Expert Support"];
+const avatars = ["#FFB7A8", "#A6C4FF", "#FFD27A", "#C9B6FF", "#9CE0C2"];
 
-const avatars = [
-  { i: "AD", c: "#A78BFA" },
-  { i: "DW", c: "#60A5FA" },
-  { i: "DF", c: "#34D399" },
-  { i: "LS", c: "#FBBF24" },
-];
-
-const dashboardRows = [
-  { label: "GA4 Events Firing", status: "Active" },
-  { label: "Google Ads Conversion", status: "Active" },
-  { label: "Meta Pixel + CAPI", status: "Active" },
-  { label: "Server-Side Tracking", status: "Active" },
-];
-
-export const Hero = () => {
+export const Hero = ({ onBook }: { onBook: () => void }) => {
   return (
-    <section id="top" className="relative pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 grid-bg opacity-60" />
-      <div className="pointer-events-none absolute top-20 -left-32 h-96 w-96 rounded-full bg-primary/15 blur-3xl animate-blob" />
-      <div className="pointer-events-none absolute -bottom-20 -right-24 h-[28rem] w-[28rem] rounded-full bg-primary/10 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
+    <section id="top" className="relative pt-14 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+      {/* Soft pastel blobs */}
+      <div className="pointer-events-none absolute -top-20 -left-24 h-80 w-80 rounded-full bg-primary/15 blur-3xl animate-blob" />
+      <div className="pointer-events-none absolute top-40 -right-24 h-96 w-96 rounded-full bg-highlight/40 blur-3xl animate-blob" style={{ animationDelay: "-6s" }} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* LEFT */}
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 h-8 pl-2 pr-4 rounded-full glass ring-1 ring-primary/30"
-          >
-            <span className="grid place-items-center h-5 w-5 rounded-full bg-primary/20 text-primary">
-              <BadgeCheck className="h-3.5 w-3.5" />
-            </span>
-            <span className="text-xs font-medium text-foreground/85">
-              Conversion Tracking &amp; Analytics Expert
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.05 }}
-            className="font-display font-bold mt-6 text-[clamp(2rem,5.5vw,4.25rem)] leading-[1.02] tracking-[-0.035em]"
-          >
-            Is Your Ad Spend Being{" "}
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="font-display font-bold text-foreground text-[clamp(1.875rem,6.2vw,4.5rem)] leading-[1.06] tracking-[-0.035em]"
+        >
+          Wasting ad spend due to inaccurate tracking?{" "}
+          <span className="block mt-2 sm:mt-3">
+            I fix it so your ads get the right data to{" "}
             <span className="relative inline-block">
-              <span className="relative z-10 text-primary text-glow">Wasted</span>
-            </span>{" "}
-            by Broken Tracking?
-          </motion.h1>
+              <span className="relative z-10">scale</span>
+              <span className="absolute inset-x-0 bottom-1 h-3 bg-highlight/80 -z-0 rounded-sm" />
+            </span>
+          </span>
+        </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 max-w-xl text-foreground/65 text-base sm:text-lg leading-relaxed"
-          >
-            I fix &amp; set up GA4, GTM, Meta Pixel, and Google Ads tracking with
-            GDPR-compliant, cookie consent, server-side, and custom event tracking
-            for any CMS or custom-coded websites — so you capture every conversion
-            and optimize ads with confidence.
-          </motion.p>
-
-          <motion.ul
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3"
-          >
-            {ticks.map((t) => (
-              <li key={t} className="flex items-center gap-2.5 text-sm text-foreground/85">
-                <span className="grid place-items-center h-5 w-5 rounded-full bg-primary text-primary-foreground shrink-0">
-                  <Check className="h-3 w-3" strokeWidth={4} />
-                </span>
-                {t}
-              </li>
-            ))}
-          </motion.ul>
-
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-9 flex flex-wrap items-center gap-3"
-          >
-            <a
-              href="#lead"
-              className="group inline-flex items-center gap-2 h-13 pl-6 pr-2 py-2 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-95 transition-opacity glow-green text-sm sm:text-base"
-            >
-              Claim Your Free Tracking Audit
-              <span className="grid place-items-center h-9 w-9 rounded-full bg-background/95 text-foreground transition-transform group-hover:translate-x-0.5">
-                <ArrowRight className="h-4 w-4" />
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-7 sm:mt-8 flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-7 gap-y-2.5"
+        >
+          {ticks.map((t) => (
+            <span key={t} className="inline-flex items-center gap-2 text-[13px] sm:text-base text-foreground/85 font-medium">
+              <span className="grid place-items-center h-5 w-5 rounded-full bg-[hsl(212_95%_55%)] text-white shadow-sm">
+                <Check className="h-3 w-3" strokeWidth={4} />
               </span>
-            </a>
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-13 px-6 py-3 rounded-full glass ring-1 ring-border text-foreground font-medium hover:border-primary/40 transition-colors text-sm sm:text-base"
-            >
-              <MessageCircle className="h-4 w-4" />
-              Chat on WhatsApp
-            </a>
-          </motion.div>
+              {t}
+            </span>
+          ))}
+        </motion.div>
 
-          <p className="mt-5 text-xs text-foreground/55 max-w-md leading-relaxed">
-            Capture every conversion. Improve ad performance. Get instant help
-            with your tracking setup.
-          </p>
-
-          <div className="mt-8 flex items-center gap-4">
-            <div className="flex -space-x-2">
-              {avatars.map((a, i) => (
-                <div
-                  key={i}
-                  className="h-9 w-9 rounded-full ring-2 ring-background grid place-items-center text-[11px] font-bold text-background"
-                  style={{ backgroundColor: a.c }}
-                >
-                  {a.i}
-                </div>
+        {/* Trust pill */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-8 inline-flex items-center gap-3 bg-card ring-1 ring-border rounded-full pl-2 pr-4 py-1.5 shadow-card"
+        >
+          <div className="flex -space-x-2">
+            {avatars.map((c, i) => (
+              <div key={i} className="h-7 w-7 rounded-full ring-2 ring-card" style={{ backgroundColor: c }} />
+            ))}
+          </div>
+          <div className="flex flex-col items-start leading-tight">
+            <div className="flex items-center gap-0.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-3 w-3 fill-highlight text-highlight" />
               ))}
             </div>
-            <div className="flex flex-col leading-tight">
-              <span className="font-display font-bold text-foreground">500+ Satisfied Clients</span>
-              <span className="text-xs text-foreground/55">Across 30+ countries</span>
+            <span className="text-[12px] font-semibold text-foreground underline underline-offset-2 decoration-foreground/30">500+ Tracking</span>
+          </div>
+        </motion.div>
+
+        {/* Video / poster card */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="mt-12 mx-auto max-w-3xl"
+        >
+          <div className="relative aspect-video rounded-3xl overflow-hidden ring-1 ring-border shadow-pop bg-gradient-to-br from-[#1b1b2e] via-[#2a1f4a] to-[#3b2a66]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(244_80%_60%/0.45),transparent_60%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,hsl(20_90%_60%/0.35),transparent_55%)]" />
+            <div className="absolute inset-0 grid place-items-center">
+              <button
+                onClick={onBook}
+                aria-label="Play introduction"
+                className="group relative h-20 w-20 rounded-full bg-background/95 grid place-items-center shadow-pop hover:scale-105 transition-transform"
+              >
+                <span className="absolute inset-0 rounded-full bg-background/30 animate-ping" />
+                <Play className="h-7 w-7 text-foreground translate-x-0.5" fill="currentColor" />
+              </button>
+            </div>
+            <div className="absolute left-5 bottom-4 right-5 flex items-center justify-between text-background/90 text-xs">
+              <span className="font-medium">Your Video Is Playing</span>
+              <span className="font-mono-ui">00:01 / 00:00</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* RIGHT — dashboard widget + video card */}
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative rounded-3xl glass ring-1 ring-border p-5 sm:p-6 shadow-pop"
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-3 px-2"
+        >
+          <button
+            onClick={onBook}
+            className="group inline-flex items-center gap-2 h-14 pl-6 sm:pl-7 pr-2 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-95 transition-opacity shadow-pop text-sm sm:text-base"
           >
-            <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-primary/20 via-transparent to-primary/10 -z-10 blur-xl" />
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-mono-ui text-[10px] uppercase tracking-[0.2em] text-foreground/50">Live</p>
-                <h3 className="font-display font-bold text-lg mt-1">Tracking Status</h3>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-foreground/70">
-                <span className="h-2 w-2 rounded-full bg-primary animate-pulse-dot" />
-                All Systems Operational
-              </div>
-            </div>
-
-            <div className="mt-5 space-y-2.5">
-              {dashboardRows.map((r, i) => (
-                <motion.div
-                  key={r.label}
-                  initial={{ opacity: 0, x: -8 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.35 + i * 0.08 }}
-                  className="flex items-center justify-between rounded-xl bg-secondary/60 ring-1 ring-border px-4 py-3"
-                >
-                  <span className="flex items-center gap-2.5 text-sm text-foreground/90">
-                    <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_8px] shadow-primary" />
-                    {r.label}
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-mono-ui text-primary">
-                    <Check className="h-3 w-3" strokeWidth={3.5} />
-                    {r.status}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Video poster */}
-            <div className="mt-5 relative rounded-2xl overflow-hidden ring-1 ring-border bg-gradient-to-br from-secondary/80 to-background aspect-video">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(152_100%_50%/0.18),transparent_60%)]" />
-              <div className="absolute inset-0 grid place-items-center">
-                <button
-                  aria-label="Play introduction"
-                  className="group relative h-16 w-16 rounded-full bg-primary text-primary-foreground grid place-items-center hover:scale-105 transition-transform glow-green"
-                >
-                  <span className="absolute inset-0 rounded-full bg-primary/50 animate-ping" />
-                  <Play className="h-6 w-6 translate-x-0.5" fill="currentColor" />
-                </button>
-              </div>
-              <div className="absolute left-4 bottom-3 right-4 flex items-center justify-between text-foreground/80 text-[11px] font-mono-ui">
-                <span>Watch: How I Fix Broken Tracking in 3 Hours</span>
-                <span>00:00 / 02:14</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+            Claim Your Tracking Audit!
+            <span className="grid place-items-center h-10 w-10 rounded-full bg-background text-foreground transition-transform group-hover:translate-x-0.5">
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </button>
+          <a
+            href={whatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 h-14 px-6 rounded-full bg-card ring-1 ring-border text-foreground font-medium hover:bg-secondary transition-colors text-sm sm:text-base"
+          >
+            <MessageCircle className="h-4 w-4" />
+            Chat on WhatsApp
+          </a>
+        </motion.div>
       </div>
     </section>
   );

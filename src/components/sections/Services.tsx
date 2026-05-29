@@ -4,28 +4,28 @@ import { Activity, Server, Target, BarChart3, Layers, Code2, FileText, ArrowUpRi
 const services = [
   {
     icon: Activity,
-    title: "Tracking & Analytics Setup",
-    body: "Accurate tracking across your site so you measure conversions properly in GA4, Google Ads, Meta Pixel and other platforms.",
+    title: "Tracking & Analytics Setup for Your Website",
+    body: "I set up accurate tracking across your website so you can measure conversions properly in GA4, Google Ads, Meta Pixel, and other marketing platforms.",
   },
   {
     icon: Server,
-    title: "Server-Side Tracking",
-    body: "Improve data quality, reduce loss from browser restrictions, and create a more reliable foundation for ad optimization.",
+    title: "Server-Side Tracking for Better Data Accuracy",
+    body: "Server-side tracking helps improve data quality, reduce data loss from browser restrictions, and create a more reliable foundation for ad optimization and reporting.",
   },
   {
     icon: Target,
     title: "See Which Ads Actually Drive Results",
-    body: "Conversion tracking configured so you can identify the campaigns, platforms and ad sets generating real revenue.",
+    body: "I configure conversion tracking so you can identify which campaigns, platforms, and ad sets are generating real leads, sales, and profitable outcomes.",
   },
   {
     icon: BarChart3,
-    title: "Google Ads Conversion Tracking",
-    body: "Set up Google Ads conversion tracking correctly to strengthen optimization and remarketing performance.",
+    title: "Google Ads Conversion Tracking Setup",
+    body: "Set up Google Ads conversion tracking correctly to improve optimization, strengthen remarketing, and give your campaigns the data they need to perform better.",
   },
   {
     icon: Layers,
-    title: "Meta Pixel & Conversion API",
-    body: "Implement Pixel + CAPI to improve event accuracy, attribution, and overall Meta campaign efficiency.",
+    title: "Meta Pixel & Conversion API Setup",
+    body: "I implement Meta Pixel and Conversion API tracking to improve event accuracy, support better attribution, and help your Meta campaigns perform more efficiently.",
   },
 ];
 
@@ -38,10 +38,10 @@ export const Services = () => {
             Services
           </p>
           <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mt-3 tracking-[-0.03em] leading-[1.05]">
-            “Accurate Tracking, Better Decisions”
+            “Accurate Tracking for Better Ad Decisions”
           </h2>
           <p className="text-muted-foreground mt-5 text-base sm:text-lg">
-            Get accurate tracking for Google Analytics, Google Ads, Meta Pixel & server-side setups.
+            From GA4 and Google Ads to Meta Pixel and server-side tracking, I build reliable tracking systems that help you measure accurately and scale with confidence.
           </p>
         </div>
 

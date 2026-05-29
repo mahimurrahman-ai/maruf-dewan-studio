@@ -7,6 +7,9 @@ import { Services } from "@/components/sections/Services";
 import { Implementation } from "@/components/sections/Implementation";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Booking } from "@/components/sections/Booking";
+import { Process } from "@/components/sections/Process";
+import { FAQ } from "@/components/sections/FAQ";
+import { BottomCTA } from "@/components/sections/BottomCTA";
 import { Footer } from "@/components/sections/Footer";
 import { BookingModal } from "@/components/BookingModal";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
@@ -27,6 +30,9 @@ const Index = () => {
       <Implementation />
       <Testimonials />
       <Booking onBook={openBooking} />
+      <Process />
+      <FAQ />
+      <BottomCTA />
       <Footer onBook={openBooking} />
       <FloatingWhatsApp />
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />

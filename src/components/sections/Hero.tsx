@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Check, MessageCircle, Star, Play } from "lucide-react";
+import { ArrowRight, Check, MessageCircle, Star, Play, Tag } from "lucide-react";
 import { whatsappLink } from "@/config/contact";
 
 const ticks = ["Tracking in 3 Hours", "I Manage Everything", "24/7 Expert Support"];

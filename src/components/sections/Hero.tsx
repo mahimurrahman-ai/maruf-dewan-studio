@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Check, MessageCircle, Star, Play } from "lucide-react";
+import { ArrowRight, Check, MessageCircle, Star, Play, Tag } from "lucide-react";
 import { whatsappLink } from "@/config/contact";
 
 const ticks = ["Tracking in 3 Hours", "I Manage Everything", "24/7 Expert Support"];
@@ -117,6 +117,13 @@ export const Hero = ({ onBook }: { onBook: () => void }) => {
           >
             <MessageCircle className="h-4 w-4" />
             Chat on WhatsApp
+          </a>
+          <a
+            href="/price"
+            className="inline-flex items-center gap-2 h-14 px-6 rounded-full bg-card ring-1 ring-border text-foreground font-medium hover:bg-secondary transition-colors text-sm sm:text-base"
+          >
+            <Tag className="h-4 w-4" />
+            View Pricing
           </a>
         </motion.div>
       </div>

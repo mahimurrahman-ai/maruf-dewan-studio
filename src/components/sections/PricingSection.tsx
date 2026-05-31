@@ -134,7 +134,7 @@ const PlanCard = ({ plan, i }: { plan: Plan; i: number }) => {
     >
       <div className="flex items-center gap-2.5">
         <span className="h-9 w-9 rounded-xl grid place-items-center bg-secondary text-foreground">
-          <Icon className="h-4.5 w-4.5" />
+          <Icon className="h-4 w-4" />
         </span>
         <span className="font-mono-ui text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
           {plan.eyebrow}
@@ -171,7 +171,7 @@ const PlanCard = ({ plan, i }: { plan: Plan; i: number }) => {
       <ul className="mt-7 space-y-3 pt-5 border-t border-border">
         {plan.features.map((f) => (
           <li key={f} className="flex items-start gap-2.5 text-sm text-foreground/90">
-            <span className="mt-0.5 h-4.5 w-4.5 rounded-full bg-primary/10 grid place-items-center shrink-0">
+            <span className="mt-0.5 h-[18px] w-[18px] rounded-full bg-primary/10 grid place-items-center shrink-0">
               <Check className="h-3 w-3 text-primary" strokeWidth={3.5} />
             </span>
             <span>{f}</span>

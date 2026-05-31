@@ -71,10 +71,11 @@ export const Footer = ({ onBook }: { onBook: () => void }) => {
             Navigate
           </p>
           <ul className="space-y-3 text-foreground">
-            <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-            <li><a href="#results" className="hover:text-primary transition-colors">Results</a></li>
-            <li><a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a></li>
-            <li><a href="#book" className="hover:text-primary transition-colors">Book a call</a></li>
+            <li><a href="/#services" className="hover:text-primary transition-colors">Services</a></li>
+            <li><a href="/#results" className="hover:text-primary transition-colors">Results</a></li>
+            <li><a href="/#testimonials" className="hover:text-primary transition-colors">Portfolio</a></li>
+            <li><a href="/price" className="hover:text-primary transition-colors">Pricing</a></li>
+            <li><a href="/#book" className="hover:text-primary transition-colors">Book a call</a></li>
           </ul>
         </div>
       </div>

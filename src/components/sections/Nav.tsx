@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { Menu, X, MessageCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { whatsappLink } from "@/config/contact";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#results", label: "Results" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#book", label: "Book" },
+  { href: "/#services", label: "Services" },
+  { href: "/#results", label: "Results" },
+  { href: "/#testimonials", label: "Portfolio" },
+  { href: "/price", label: "Pricing" },
+  { href: "/#book", label: "Book" },
 ];
 
 export const Nav = ({ onBook }: { onBook: () => void }) => {

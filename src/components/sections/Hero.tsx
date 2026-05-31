@@ -118,6 +118,13 @@ export const Hero = ({ onBook }: { onBook: () => void }) => {
             <MessageCircle className="h-4 w-4" />
             Chat on WhatsApp
           </a>
+          <a
+            href="/price"
+            className="inline-flex items-center gap-2 h-14 px-6 rounded-full bg-card ring-1 ring-border text-foreground font-medium hover:bg-secondary transition-colors text-sm sm:text-base"
+          >
+            <Tag className="h-4 w-4" />
+            View Pricing
+          </a>
         </motion.div>
       </div>
     </section>

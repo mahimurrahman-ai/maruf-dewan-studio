@@ -7,12 +7,10 @@ export const contact = {
   whatsappPrefilledMessage:
     "Hi Maruf, I'd like a free tracking audit for my website.",
 
-  // TODO: Replace with your Calendly / Cal.com URL when ready.
-  calendarUrl: "https://calendly.com/maruf-dewan/free-tracking-audit",
-
-  // TODO: Replace with your real email and LinkedIn.
-  email: "hello@marufdewan.com",
-  linkedinUrl: "https://www.linkedin.com/in/maruf-dewan/",
+  calendarUrl: "https://calendly.com/marufdewan2025/tracking-audit-consultation",
+  tallyUrl: "https://tally.so/r/PdvqVB",
+  email: "im.marufdewan@gmail.com",
+  linkedinUrl: "https://www.linkedin.com/in/marufahmeddewan/",
 } as const;
 
 export const whatsappLink = () => {
@@ -20,3 +18,6 @@ export const whatsappLink = () => {
   const text = encodeURIComponent(contact.whatsappPrefilledMessage);
   return `https://wa.me/${digits}?text=${text}`;
 };
+
+export const tallyPlanLink = (plan: string) =>
+  `${contact.tallyUrl}?plan=${encodeURIComponent(plan)}`;

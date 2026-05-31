@@ -5,13 +5,14 @@ export const contact = {
   // Real number with country code. Used as https://wa.me/<digitsOnly>
   whatsappNumber: "+8801323121929",
   whatsappPrefilledMessage:
-    "Hi Maruf, can you help me with the tracking?",
+    "Hi Maruf, I'd like a free tracking audit for my website.",
 
-  calendarUrl: "https://calendly.com/marufdewan2025/tracking-audit-consultation",
-  auditFormUrl: "https://tally.so/r/PdvqVB",
+  // TODO: Replace with your Calendly / Cal.com URL when ready.
+  calendarUrl: "https://calendly.com/maruf-dewan/free-tracking-audit",
 
-  email: "im.marufdewan@gmail.com",
-  linkedinUrl: "https://www.linkedin.com/in/marufahmeddewan/",
+  // TODO: Replace with your real email and LinkedIn.
+  email: "hello@marufdewan.com",
+  linkedinUrl: "https://www.linkedin.com/in/maruf-dewan/",
 } as const;
 
 export const whatsappLink = () => {

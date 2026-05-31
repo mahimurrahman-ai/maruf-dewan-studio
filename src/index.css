@@ -4,42 +4,42 @@
 
 @layer base {
   :root {
-    /* Dark navy canvas, neon green accent (abdulkayium.com inspired) */
-    --background: 220 25% 6%;        /* #0a0d12 */
-    --foreground: 0 0% 98%;
+    /* Soft pastel-blue canvas, indigo CTA, yellow announcement, pin red */
+    --background: 224 100% 96%;      /* #EAF0FF */
+    --foreground: 230 25% 10%;
 
-    --card: 222 20% 9%;              /* #111318 */
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 10%;
 
-    --popover: 222 20% 9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 10%;
 
-    --primary: 152 100% 50%;         /* neon green */
-    --primary-foreground: 220 25% 6%;
+    --primary: 244 75% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 18% 13%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 224 70% 92%;
+    --secondary-foreground: 230 25% 10%;
 
-    --muted: 222 18% 13%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 224 50% 94%;
+    --muted-foreground: 230 12% 38%;
 
-    --accent: 152 100% 50%;
-    --accent-foreground: 220 25% 6%;
+    --accent: 244 75% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --sage: 152 100% 50%;
-    --highlight: 152 100% 50%;
-    --pin: 152 100% 50%;
+    --sage: 152 62% 42%;
+    --highlight: 48 100% 70%;
+    --pin: 358 75% 56%;
 
-    --destructive: 0 70% 50%;
+    --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 15% 16%;
-    --input: 222 15% 16%;
-    --ring: 152 100% 50%;
+    --border: 230 30% 88%;
+    --input: 230 30% 88%;
+    --ring: 244 75% 60%;
 
     --radius: 1rem;
 
-    --hairline: 0 0% 100% / 0.08;
+    --hairline: 230 25% 10% / 0.08;
   }
 
   .dark {

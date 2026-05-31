@@ -1,12 +1,7 @@
 const platforms = [
-  "Google Ads Conversion Tracking Setup",
-  "Meta Pixel & Conversion API (CAPI) Integration",
-  "First-Party Server-Side Tracking Implementation",
-  "Google Analytics 4 Event & Funnel Tracking",
-  "All Types of Form Tracking",
-  "Offline Conversion Tracking for Ad Platforms",
-  "Custom Event Tracking via Google Tag Manager",
-  "GDPR-Compliant Cookie Consent Integration",
+  "Google Ads", "GA4", "Google Tag Manager", "Meta Pixel", "Conversions API",
+  "Shopify", "WordPress", "Shogun", "ClickFunnels", "HubSpot", "Zapier", "Wix",
+  "TikTok Ads", "Bing Ads", "Custom Code",
 ];
 
 export const Marquee = () => {

@@ -67,7 +67,7 @@ const setupPlans: Plan[] = [
       "Claude AI reporting dashboards",
     ],
     cta: "Book a strategy call",
-    ctaHref: "#",
+    ctaHref: "https://tally.so/r/PdvqVB",
   },
 ];
 

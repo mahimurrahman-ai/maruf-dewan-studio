@@ -1,5 +1,5 @@
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Check } from "lucide-react";
 
 const stats = [
@@ -19,15 +19,42 @@ const checklist = [
 
 const Counter = ({ to, decimals = 0 }: { to: number; decimals?: number }) => {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [started, setStarted] = useState(false);
   const mv = useMotionValue(0);
   const text = useTransform(mv, (v) => v.toFixed(decimals));
 
   useEffect(() => {
-    if (!inView) return;
+    if (started) return;
+    const el = ref.current;
+    let fallback: ReturnType<typeof setTimeout> | undefined;
+    let observer: IntersectionObserver | undefined;
+    const trigger = () => {
+      if (started) return;
+      setStarted(true);
+    };
+    if (el && typeof IntersectionObserver !== "undefined") {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) trigger();
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      );
+      observer.observe(el);
+    }
+    fallback = setTimeout(trigger, 2000);
+    return () => {
+      observer?.disconnect();
+      if (fallback) clearTimeout(fallback);
+    };
+  }, [started]);
+
+  useEffect(() => {
+    if (!started) return;
     const ctrl = animate(mv, to, { duration: 1.6, ease: [0.22, 1, 0.36, 1] });
     return ctrl.stop;
-  }, [inView, to, mv]);
+  }, [started, to, mv]);
 
   return <motion.span ref={ref}>{text}</motion.span>;
 };

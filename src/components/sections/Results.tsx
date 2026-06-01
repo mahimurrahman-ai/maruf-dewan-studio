@@ -44,13 +44,13 @@ export const Results = () => {
             Full-Funnel Tracking to Scale Profitably
           </h2>
 
-          <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:gap-5">
+          <div className="mt-8 sm:mt-10 grid grid-cols-1 min-[480px]:grid-cols-2 gap-3 sm:gap-5">
             {stats.map((s, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={{ once: true, amount: 0.1, margin: "-40px 0px" }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
                 className="bg-card rounded-2xl p-4 sm:p-6 ring-1 ring-border shadow-card"
               >

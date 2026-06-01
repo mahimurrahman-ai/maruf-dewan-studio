@@ -12,7 +12,7 @@ export const Marquee = () => {
           Trusted partners and tools
         </p>
       </div>
-      <div className="relative">
+      <div className="relative overflow-x-hidden">
         <div className="flex animate-ticker w-max">
           {[...platforms, ...platforms].map((p, i) => (
             <div key={i} className="flex items-center gap-3 px-7 shrink-0">

@@ -50,8 +50,8 @@ export const Implementation = () => {
         </div>
 
         {/* Ad-platform impact viz — sticky note style */}
-        <div className="lg:sticky lg:top-28">
-          <div className="relative bg-card rounded-3xl p-6 sm:p-8 lg:p-10 ring-1 ring-border shadow-note">
+        <div className="lg:sticky lg:top-28 w-full">
+          <div className="relative bg-card rounded-3xl p-5 sm:p-8 lg:p-10 ring-1 ring-border shadow-note w-full max-w-full">
             <span className="pushpin -top-3 left-10 z-10" />
             <div className="flex items-center justify-between">
               <p className="font-mono-ui text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
@@ -69,7 +69,7 @@ export const Implementation = () => {
               {bars.map((b, i) => (
                 <div key={i}>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-foreground/90 inline-flex items-center gap-2">
+                    <span className="text-xs sm:text-sm font-medium text-foreground/90 inline-flex items-center gap-2">
                       {b.dir === "up" ? (
                         <TrendingUp className="h-3.5 w-3.5 text-sage" />
                       ) : (
@@ -78,7 +78,7 @@ export const Implementation = () => {
                       {b.label}
                     </span>
                     <span
-                      className={`font-mono-ui text-sm font-semibold ${
+                      className={`font-mono-ui text-xs sm:text-sm font-semibold ${
                         b.dir === "up" ? "text-sage" : "text-primary"
                       }`}
                     >
@@ -90,7 +90,7 @@ export const Implementation = () => {
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${Math.min(b.value, 80)}%` }}
-                      viewport={{ once: true, margin: "-60px" }}
+                      viewport={{ once: true, amount: 0.1 }}
                       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
                       className={`h-full rounded-full ${b.dir === "up" ? "bg-sage" : "bg-primary"}`}
                     />
